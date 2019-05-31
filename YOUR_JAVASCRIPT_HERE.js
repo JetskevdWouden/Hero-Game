@@ -1,14 +1,28 @@
 // Write your JS here
-const hero = {
+let hero = {
     name: 'Wonder Woman',
     heroic: true,
     inventory: [],
     health: 10,
     weapon: {
-        type: 'lasso',
+        type: '',
         damage: 2
     }
 };
+
+// let imageDagger = document.getElementById('dagger');
+// imageDagger.onclick = () => {
+//     let newWeapon = {
+//         weapon: {
+//             type: 'dagger',
+//             damage: 2
+//         }
+//     }
+//     console.log('HAHAHA');
+//     console.log(hero.inventory);
+//     hero.inventory.push(newWeapon);
+//     console.log(hero.inventory);
+// }
 
 const rest = (obj) => {
     if (obj.health === 10){
@@ -36,18 +50,25 @@ imageInn.onclick = () => {
     hero.health = 10;
 }
 
-// let imageDagger = document.getElementById('dagger');
-// imageDagger.onclick = function () {
+let imageBag = document.getElementById('bag');
+imageBag.onclick = () => {
+    hero.weapon = hero.inventory[0];
+}
+
+let imageDagger = document.getElementById('dagger');
+imageDagger.onclick = () => {
 //     let newWeapon = {
 //         weapon: {
 //             type: 'dagger',
 //             damage: 2
 //         }
 //     }
+//     console.log('HAHAHA');
+//     console.log(hero.inventory);
 //     hero.inventory.push(newWeapon);
+//     console.log(hero.inventory);
 // }
 
-let imageBag = document.getElementById('bag');
-imageBag.onclick = () => {
-    hero.weapon = hero.inventory[0];
+const displayStats = obj => {
+
 }
