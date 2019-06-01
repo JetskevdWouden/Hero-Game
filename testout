@@ -1,0 +1,69 @@
+// Write your JS here
+let hero = {
+    name: 'Wonder Woman',
+    heroic: true,
+    inventory: [],
+    health: 10,
+    weapon: {
+        type: 'lasso',
+        damage: 2
+    }
+};
+
+const rest = (obj) => {
+    if (obj.health === 10){
+        alert('Your HERO already has health level 10!');
+    } else {
+        obj.health = 10;
+    }
+    return obj;
+}
+
+const pickUpItem = (hero, weapon) => {
+    hero.inventory.push(weapon);
+}
+
+const equipWeapon = (hero) => {
+    if(hero.inventory.length < 1) {
+        return 
+    } else {
+        hero.weapon = hero.inventory[0];
+    }
+}
+
+let imageInn = document.getElementById('inn');
+imageInn.onclick = () => {
+    hero.health = 10;
+}
+
+let imageBag = document.getElementById('bag');
+imageBag.onclick = () => {
+    hero.weapon = hero.inventory[0];
+}
+
+let imageDagger = document.getElementById('dagger');
+imageDagger.onclick = () => {
+//     let newWeapon = {
+//         weapon: {
+//             type: 'dagger',
+//             damage: 2
+//         }
+//     }
+//     console.log('HAHAHA');
+//     console.log(hero.inventory);
+//     hero.inventory.push(newWeapon);
+//     console.log(hero.inventory);
+// }
+// const addHeroDetails = document.getElementById('heroDetails');
+// const displayStats = obj => {
+//     let heroElement = document.createElement('section');
+//     heroElement.name = obj.name;
+//     heroElement.health = obj.health;
+//     heroElement.weapon.type = obj.weapon.type;
+//     heroElement.weapon.damage = obj.weapon.damage;
+//     heroElement.innerHTML = `name: ${heroElement.name} /n health: ${heroElement.health} /n weapon type: ${heroElement.weapon.type}
+//     /n weapon damage: ${heroElement.weapon.damage}`;
+//     addHeroDetails.appendChild('heroElement');
+// }
+
+// displayStats(hero);

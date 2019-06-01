@@ -1,6 +1,5 @@
-// Write your JS here
 let hero = {
-    name: 'Wonder Woman',
+    name: '',
     heroic: true,
     inventory: [],
     health: 10,
@@ -8,21 +7,7 @@ let hero = {
         type: '',
         damage: 2
     }
-};
-
-// let imageDagger = document.getElementById('dagger');
-// imageDagger.onclick = () => {
-//     let newWeapon = {
-//         weapon: {
-//             type: 'dagger',
-//             damage: 2
-//         }
-//     }
-//     console.log('HAHAHA');
-//     console.log(hero.inventory);
-//     hero.inventory.push(newWeapon);
-//     console.log(hero.inventory);
-// }
+}
 
 const rest = (obj) => {
     if (obj.health === 10){
@@ -33,8 +18,18 @@ const rest = (obj) => {
     return obj;
 }
 
+let imageInn = document.getElementById('inn');
+imageInn.onclick = () => {
+    hero.health = 10;
+}
+
 const pickUpItem = (hero, weapon) => {
     hero.inventory.push(weapon);
+}
+
+let imageDagger = document.getElementById('dagger');
+imageDagger.onclick = () => {
+    hero.inventory.push({type: 'dagger', damage: 2});
 }
 
 const equipWeapon = (hero) => {
@@ -45,30 +40,7 @@ const equipWeapon = (hero) => {
     }
 }
 
-let imageInn = document.getElementById('inn');
-imageInn.onclick = () => {
-    hero.health = 10;
-}
-
 let imageBag = document.getElementById('bag');
 imageBag.onclick = () => {
     hero.weapon = hero.inventory[0];
-}
-
-let imageDagger = document.getElementById('dagger');
-imageDagger.onclick = () => {
-//     let newWeapon = {
-//         weapon: {
-//             type: 'dagger',
-//             damage: 2
-//         }
-//     }
-//     console.log('HAHAHA');
-//     console.log(hero.inventory);
-//     hero.inventory.push(newWeapon);
-//     console.log(hero.inventory);
-// }
-
-const displayStats = obj => {
-
 }
