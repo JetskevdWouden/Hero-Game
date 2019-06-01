@@ -1,10 +1,12 @@
+//Section 1&2
+
 let hero = {
-    name: '',
+    name: 'Wonder Woman',
     heroic: true,
     inventory: [],
     health: 10,
     weapon: {
-        type: '',
+        type: 'lasso',
         damage: 2
     }
 }
@@ -44,3 +46,18 @@ let imageBag = document.getElementById('bag');
 imageBag.onclick = () => {
     hero.weapon = hero.inventory[0];
 }
+
+//Section 4
+
+const addHeroStats = document.getElementById('heroStats');
+const displayStats = (obj) => {
+    let heroElement = document.createElement('section');
+    heroElement.innerHTML = `name: ${obj.name} 
+    <br> health: ${obj.health} 
+    <br> weapon type: ${obj.weapon.type} 
+    <br> weapon damage: ${obj.weapon.damage}`;
+    addHeroStats.appendChild(heroElement);
+}
+
+displayStats(hero);
+
