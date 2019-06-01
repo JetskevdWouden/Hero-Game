@@ -50,8 +50,9 @@ imageBag.onclick = () => {
 //Section 4
 
 const addHeroStats = document.getElementById('heroStats');
+let heroElement = document.createElement('section');
 const displayStats = (obj) => {
-    let heroElement = document.createElement('section');
+    heroElement.innerHTML = '';
     heroElement.innerHTML = `name: ${obj.name} 
     <br> health: ${obj.health} 
     <br> weapon type: ${obj.weapon.type} 
@@ -61,3 +62,10 @@ const displayStats = (obj) => {
 
 displayStats(hero);
 
+const submitName = () => {
+    //gather data
+    const input = document.getElementById('name');
+    let newName = input.value;
+    hero.name = `${newName}`;
+    displayStats(hero);
+}
